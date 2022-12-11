@@ -15,7 +15,3 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 </head>
 <?php
-session_start();
-if ($_SESSION['status'] != 'login') {
-    header('location:./login.php');
-}
