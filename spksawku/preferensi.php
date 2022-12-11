@@ -47,19 +47,28 @@ require "R.php";
 $P = array();
 $m = count($W);
 $no = 0;
-foreach ($R as $i => $r) {
-    for ($j = 0; $j < $m; $j++) {
+$result = $db->query($sql);
+    foreach ($R as $i => $r) {
+      for ($j = 0; $j < $m; $j++) {
         $P[$i] = (isset($P[$i]) ? $P[$i] : 0) + $r[$j] * $W[$j];
-    }
-    echo "<tr class='center'>
+      } 
+      echo "<tr class='center'>
             <td>" . (++$no) . "</td>
             <td>A{$i}</td>
             <td>{$P[$i]}</td>
-          </tr>";
+          </tr>";          
 }
+
+
 ?>
                     </table>
                   </div>
+                    <div>
+                      <?php
+
+                      echo "Nilai yang tertinggi adalah " . (max($P));
+                      ?>
+                    </div>
                 </div>
               </div>
             </div>
