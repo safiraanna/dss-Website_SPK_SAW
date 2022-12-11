@@ -1,8 +1,8 @@
 <?php
-$sql = "SELECT weight FROM criteria ORDER BY kdKriteria";
+$sql = "SELECT bobot FROM criteria ORDER BY kdKriteria";
 $result = $db->query($sql);
 $i = 0;
-$W = array();
+$W = array(); 
 while ($row = $result->fetch_object()) {
     $W[] = $row->bobot;
 }

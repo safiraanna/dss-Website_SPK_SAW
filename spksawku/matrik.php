@@ -126,7 +126,7 @@ $sql = "SELECT
                 a.nilai/" . max($X[3]) . ",
                 " . min($X[3]) . "/a.nilai)
                ,0)
-             ) AS C3,
+             ) AS C3
         FROM
           evaluations a
           JOIN criteria b USING(kdKriteria)
@@ -178,7 +178,7 @@ $i = 0;
 while ($row = $result->fetch_object()) {
     echo '<option value="' . $row->kdKecamatan . '">' . $row->namaKecamatan . '</option>';
 }
-$result->free();
+$result->free(); 
 ?>
                                           </select>
                             </div>

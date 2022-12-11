@@ -2,7 +2,7 @@
 <html lang="en">
   <?php
 require "layout/head.php";
-require "include/conn.php";
+require "include/conn.php"; 
 require "W.php";
 require "R.php";
 ?>

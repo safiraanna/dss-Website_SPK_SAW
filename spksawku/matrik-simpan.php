@@ -1,11 +1,11 @@
 <?php
 require "include/conn.php";
 
-$id_alternative = $_POST['id_alternative'];
-$id_criteria = $_POST['id_criteria'];
-$value = $_POST['value'];
+$kdKecamatan = $_POST['kdKecamatan'];
+$kdKriteria = $_POST['criteria'];
+$nilai = $_POST['nilai'];
 
-$sql = "INSERT INTO saw_evaluations values ('$id_alternative','$id_criteria','$value')";
+$sql = "INSERT INTO evaluations values ('$kdKecamatan','$kdKriteria','$nilai')";
 $result = $db->query($sql);
 
 if ($result === true) {
