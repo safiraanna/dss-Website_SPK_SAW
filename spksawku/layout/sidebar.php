@@ -51,9 +51,9 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="logout.php" class='sidebar-link'>
+                    <a href="../index.html" class='sidebar-link'>
                         <i class="bi bi-box-arrow-right"></i>
-                        <span>Logout</span>
+                        <span>Back to Home Page</span>
                     </a>
                 </li>
 
