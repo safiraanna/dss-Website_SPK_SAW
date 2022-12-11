@@ -3,7 +3,7 @@
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpass = '';
-$dbname = 'db_saw';
+$dbname = 'spkbeasiswa';
 //-- koneksi ke database server dengan extension mysqli
 $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 //-- hentikan program dan tampilkan pesan kesalahan jika koneksi gagal

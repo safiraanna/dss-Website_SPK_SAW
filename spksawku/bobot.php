@@ -39,22 +39,22 @@ require "include/conn.php";
     <th>No</th>
     <th>Simbol</th>
     <th>Kriteria</th>
-    <th>Bobot</th>
-    <th colspan="2">Atribut</th>
+    <th>Atribut</th>
+    <th colspan="2">Bobot</th>
   </tr>
   <?php
-$sql = 'SELECT id_criteria,criteria,weight,attribute FROM saw_criterias';
+$sql = 'SELECT kdKriteria,kriteria,atribut,bobot FROM criteria';
 $result = $db->query($sql);
 $i = 0;
 while ($row = $result->fetch_object()) {
     echo "<tr>
         <td class='right'>" . (++$i) . "</td>
         <td class='center'>C{$i}</td>
-        <td>{$row->criteria}</td>
-        <td>{$row->weight}</td>
-        <td>{$row->attribute}</td>
+        <td>{$row->kriteria}</td>
+        <td>{$row->atribut}</td>
+        <td>{$row->bobot}</td>
         <td>
-            <a href='bobot-edit.php?id={$row->id_criteria}' class='btn btn-info btn-sm'>Edit</a>
+            <a href='bobot-edit.php?id={$row->kdKriteria}' class='btn btn-info btn-sm'>Edit</a>
             </td>
       </tr>\n";
 }

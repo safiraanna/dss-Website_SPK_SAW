@@ -49,41 +49,33 @@ Rij = ( Xij/max{Xij} )</p>
     <tr>
         <th>C1</th>
         <th>C2</th>
-        <th>C3</th>
-        <th>C4</th>
-        <th colspan="2">C5</th>
+        <th colspan="2">C3</th>
     </tr>
     <?php
 $sql = "SELECT
-          a.id_alternative,
-          b.name,
-          SUM(IF(a.id_criteria=1,a.value,0)) AS C1,
-          SUM(IF(a.id_criteria=2,a.value,0)) AS C2,
-          SUM(IF(a.id_criteria=3,a.value,0)) AS C3,
-          SUM(IF(a.id_criteria=4,a.value,0)) AS C4,
-          SUM(IF(a.id_criteria=5,a.value,0)) AS C5
+          a.kdKecamatan,
+          b.namaKecamatan,
+          SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1,
+          SUM(IF(a.kdKriteria=2,a.nilai,0)) AS C2,
+          SUM(IF(a.kdKriteria=3,a.nilai,0)) AS C3
         FROM
-          saw_evaluations a
-          JOIN saw_alternatives b USING(id_alternative)
-        GROUP BY a.id_alternative
-        ORDER BY a.id_alternative";
+          evaluations a
+          JOIN districts b USING(kdKecamatan)
+        GROUP BY a.kdKecamatan
+        ORDER BY a.kdKecamatan";
 $result = $db->query($sql);
-$X = array(1 => array(), 2 => array(), 3 => array(), 4 => array(), 5 => array());
+$X = array(1 => array(), 2 => array(), 3 => array());
 while ($row = $result->fetch_object()) {
     array_push($X[1], round($row->C1, 2));
     array_push($X[2], round($row->C2, 2));
     array_push($X[3], round($row->C3, 2));
-    array_push($X[4], round($row->C4, 2));
-    array_push($X[5], round($row->C5, 2));
     echo "<tr class='center'>
-            <th>A<sub>{$row->id_alternative}</sub> {$row->name}</th>
+            <th>A<sub>{$row->kdKecamatan}</sub> {$row->namaKecamatan}</th>
             <td>" . round($row->C1, 2) . "</td>
             <td>" . round($row->C2, 2) . "</td>
             <td>" . round($row->C3, 2) . "</td>
-            <td>" . round($row->C4, 2) . "</td>
-            <td>" . round($row->C5, 2) . "</td>
             <td>
-            <a href='keputusan-hapus.php?id={$row->id_alternative}' class='btn btn-danger btn-sm'>Hapus</a>
+            <a href='keputusan-hapus.php?id={$row->kdKecamatan}' class='btn btn-danger btn-sm'>Hapus</a>
             </td>
           </tr>\n";
 }
@@ -104,74 +96,52 @@ $result->free();
         <th>C1</th>
         <th>C2</th>
         <th>C3</th>
-        <th>C4</th>
-        <th>C5</th>
     </tr>
     <?php
 $sql = "SELECT
-          a.id_alternative,
+          a.kdKecamatan,
           SUM(
             IF(
-              a.id_criteria=1,
+              a.kdKriteria=1,
               IF(
-                b.attribute='benefit',
-                a.value/" . max($X[1]) . ",
-                " . min($X[1]) . "/a.value)
+                b.atribut='benefit',
+                a.nilai/" . max($X[1]) . ",
+                " . min($X[1]) . "/a.nilai)
               ,0)
               ) AS C1,
           SUM(
             IF(
-              a.id_criteria=2,
+              a.kdKriteria=2,
               IF(
-                b.attribute='benefit',
-                a.value/" . max($X[2]) . ",
-                " . min($X[2]) . "/a.value)
+                b.atribut='benefit',
+                a.nilai/" . max($X[2]) . ",
+                " . min($X[2]) . "/a.nilai)
                ,0)
              ) AS C2,
           SUM(
             IF(
-              a.id_criteria=3,
+              a.kdKriteria=3,
               IF(
-                b.attribute='benefit',
-                a.value/" . max($X[3]) . ",
-                " . min($X[3]) . "/a.value)
+                b.atribut='benefit',
+                a.nilai/" . max($X[3]) . ",
+                " . min($X[3]) . "/a.nilai)
                ,0)
              ) AS C3,
-          SUM(
-            IF(
-              a.id_criteria=4,
-              IF(
-                b.attribute='benefit',
-                a.value/" . max($X[4]) . ",
-                " . min($X[4]) . "/a.value)
-               ,0)
-             ) AS C4,
-          SUM(
-            IF(
-              a.id_criteria=5,
-              IF(
-                b.attribute='benefit',
-                a.value/" . max($X[5]) . ",
-                " . min($X[5]) . "/a.value)
-               ,0)
-             ) AS C5
         FROM
-          saw_evaluations a
-          JOIN saw_criterias b USING(id_criteria)
-        GROUP BY a.id_alternative
-        ORDER BY a.id_alternative
+          evaluations a
+          JOIN criteria b USING(kdKriteria)
+        GROUP BY a.kdKecamatan
+        ORDER BY a.kdKecamatan
        ";
 $result = $db->query($sql);
 $R = array();
 while ($row = $result->fetch_object()) {
-    $R[$row->id_alternative] = array($row->C1, $row->C2, $row->C3, $row->C4, $row->C5);
+    $R[$row->kdKecamatan] = array($row->C1, $row->C2, $row->C3);
     echo "<tr class='center'>
-            <th>A{$row->id_alternative}</th>
+            <th>A{$row->kdKecamatan}</th>
             <td>" . round($row->C1, 2) . "</td>
             <td>" . round($row->C2, 2) . "</td>
             <td>" . round($row->C3, 2) . "</td>
-            <td>" . round($row->C4, 2) . "</td>
-            <td>" . round($row->C5, 2) . "</td>
           </tr>\n";
 }
 ?>
@@ -202,11 +172,11 @@ while ($row = $result->fetch_object()) {
                             <div class="form-group">
                             <select class="form-control form-select" name="id_alternative">
                             <?php
-$sql = 'SELECT id_alternative,name FROM saw_alternatives';
+$sql = 'SELECT kdKecamatan,name FROM districts';
 $result = $db->query($sql);
 $i = 0;
 while ($row = $result->fetch_object()) {
-    echo '<option value="' . $row->id_alternative . '">' . $row->name . '</option>';
+    echo '<option value="' . $row->kdKecamatan . '">' . $row->namaKecamatan . '</option>';
 }
 $result->free();
 ?>
@@ -218,11 +188,11 @@ $result->free();
                             <div class="form-group">
                             <select class="form-control form-select" name="id_criteria">
                             <?php
-$sql = 'SELECT * FROM saw_criterias';
+$sql = 'SELECT * FROM criteria';
 $result = $db->query($sql);
 $i = 0;
 while ($row = $result->fetch_object()) {
-    echo '<option value="' . $row->id_criteria . '">' . $row->criteria . '</option>';
+    echo '<option value="' . $row->kdKriteria . '">' . $row->kriteria . '</option>';
 }
 $result->free();
 ?>

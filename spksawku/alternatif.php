@@ -15,7 +15,7 @@ require "include/conn.php";
                     </a>
                 </header>
                 <div class="page-heading">
-                    <h3>Alternatif</h3>
+                    <h3>Kecamatan</h3>
                 </div>
                 <div class="page-content">
                     <section class="row">
@@ -23,12 +23,12 @@ require "include/conn.php";
                             <div class="card">
 
                                 <div class="card-header">
-                                    <h4 class="card-title">Tabel Alternatif</h4>
+                                    <h4 class="card-title">Tabel Kecamatan</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <p class="card-text">
-                                            Data-data mengenai kandidat yang akan dievaluasi di representasikan dalam
+                                            Data-data mengenai kandidat kecamatan yang akan dievaluasi di representasikan dalam
                                             tabel berikut:
                                         </p>
                                     </div>
@@ -40,20 +40,20 @@ require "include/conn.php";
                                     <div class="table-responsive">
                                         <table class="table table-striped mb-0">
                                             <caption>
-                                                Tabel Alternatif A<sub>i</sub>
+                                                Tabel Kecamatan<sub>i</sub>
                                             </caption>
                                             <tr>
                                                 <th>No</th>
                                                 <th colspan="2">Name</th>
                                             </tr>
                                             <?php
-$sql = 'SELECT id_alternative,name FROM saw_alternatives';
+$sql = 'SELECT kdKecamatan, namaKecamatan FROM districts';
 $result = $db->query($sql);
 $i = 0;
 while ($row = $result->fetch_object()) {
     echo "<tr>
         <td class='right'>" . (++$i) . "</td>
-        <td class='center'>{$row->name}</td>
+        <td class='center'>{$row->namaKecamatan}</td>
         <td>
         <div class='btn-group mb-1'>
         <div class='dropdown'>
@@ -63,8 +63,8 @@ while ($row = $result->fetch_object()) {
                 Aksi
             </button>
             <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                <a class='dropdown-item' href='alternatif-edit.php?id={$row->id_alternative}'>Edit</a>
-                <a class='dropdown-item' href='alternatif-hapus.php?id={$row->id_alternative}'>Hapus</a>
+                <a class='dropdown-item' href='alternatif-edit.php?id={$row->kdKecamatan}'>Edit</a>
+                <a class='dropdown-item' href='alternatif-hapus.php?id={$row->kdKecamatan}'>Hapus</a>
             </div>
         </div>
     </div>
