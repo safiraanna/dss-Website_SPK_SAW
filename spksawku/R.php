@@ -1,12 +1,10 @@
 <?php
 $sql = "SELECT
-a.id_alternative,
-b.name,
+a.kdKecamatan,
+b.namaKeca,
 SUM(IF(a.id_criteria=1,a.value,0)) AS C1,
 SUM(IF(a.id_criteria=2,a.value,0)) AS C2,
-SUM(IF(a.id_criteria=3,a.value,0)) AS C3,
-SUM(IF(a.id_criteria=4,a.value,0)) AS C4,
-SUM(IF(a.id_criteria=5,a.value,0)) AS C5
+SUM(IF(a.id_criteria=3,a.value,0)) AS C3
 FROM
 saw_evaluations a
 JOIN saw_alternatives b USING(id_alternative)
