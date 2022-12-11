@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 06:43 AM
+-- Generation Time: Dec 11, 2022 at 01:27 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.25
 
@@ -78,7 +78,6 @@ INSERT INTO `districts` (`kdKecamatan`, `namaKecamatan`) VALUES
 (17, 'Kec. Sukasari'),
 (18, 'Kec. Sumedang Selatan'),
 (19, 'Kec. Sumedang Utara'),
-(20, 'Kec. Surian'),
 (21, 'Kec. Tanjungkerta'),
 (22, 'Kec. Tanjungmedar'),
 (23, 'Kec. Tanjungsari'),
@@ -160,7 +159,6 @@ INSERT INTO `evaluations` (`kdKecamatan`, `kdKriteria`, `nilai`) VALUES
 (19, 1, 919),
 (19, 2, 2614),
 (19, 3, 1),
-(20, 3, 1),
 (21, 1, 271),
 (21, 2, 778),
 (21, 3, 2),

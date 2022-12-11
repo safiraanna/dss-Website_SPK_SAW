@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT
+$sql = "SELECT 
   a.kdKecamatan,
   b.namaKecamatan,
     SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1,
