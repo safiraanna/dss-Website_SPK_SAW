@@ -3,7 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="./">SPK - SAW</a>
+                    <a href="./">BisaSekolah!</a>
+                    <h6>Aplikasi Penentuan Kecamatan untuk Pemberian Beasiswa</h6>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -28,7 +29,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="alternatif.php">Alternatif</a>
+                            <a href="alternatif.php">Kecamatan</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="bobot.php">Bobot &amp; Kriteria</a>

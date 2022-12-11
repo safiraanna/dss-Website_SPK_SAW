@@ -1,7 +1,7 @@
 <?php
 require "include/conn.php";
 $id = $_GET['id'];
-$sql = "SELECT * FROM saw_criterias WHERE id_criteria = '$id' ";
+$sql = "SELECT * FROM criteria WHERE kdKriteria = '$id' ";
 $result = $db->query($sql);
 $row = $result->fetch_array();
 ?>
@@ -38,15 +38,15 @@ $row = $result->fetch_array();
                                         <input type="text" class="form-control" name="criteria" value="<?=$row['criteria'];?>">
                                     </div>
                                     <div class="form-group">
-                                        <label for="basicInput">Weight</label>
-                                        <input type="text" class="form-control" name="weight" value="<?=$row['weight'];?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="basicInput">Attribute</label>
+                                        <label for="basicInput">Atribut</label>
                                         <select class="form-control form-select" name="attribute">
                                             <option value="benefit">Benefit</option>
                                             <option value="cost">Cost</option>
                                           </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="basicInput">Bobot</label>
+                                        <input type="text" class="form-control" name="weight" value="<?=$row['bobot'];?>">
                                     </div>
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-info btn-sm">

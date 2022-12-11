@@ -19,20 +19,17 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Sistem Pendukung Keputusan Manajer IT Terbaik</h4>
+                                    <h4>Sistem Pendukung Keputusan Pemberian Beasiswa pada Kecamatan yang Paling Membutuhkan di Kabupaten Sumedang</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                         <p class="card-text">
-                                            Metode Simple Additive Weighting (SAW) sering juga dikenal istilah metode
-                                            penjumlahan terbobot. Konsep dasar metode SAW adalah mencari penjumlahan
-                                            terbobot dari rating kinerja pada setiap alternatif pada semua atribut
-                                            (Fishburn 1967). SAW dapat dianggap sebagai cara yang paling mudah dan
-                                            intuitif untuk menangani masalah Multiple Criteria Decision-Making MCDM,
-                                            karena fungsi linear additive dapat mewakili preferensi pembuat keputusan
-                                            (Decision-Making, DM). Hal tersebut dapat dibenarkan, namun, hanya ketika
-                                            asumsi preference independence (Keeney & Raiffa 1976) atau preference
-                                            separability (Gorman 1968) terpenuhi.
+                                        Simple Additive Weighting (SAW) merupakan suatu metode algoritma dalam sistem pendukung 
+                                        keputusan. Metode SAW juga sering dikenal dengan penjumlahan terbobot. Metode SAW dirancang 
+                                        untuk menyelesaikan masalah penyeleksian dalam sistem pengambilan keputusan multi proses. 
+                                        Pada prosesnya SAW akan melakukan penjumlahan terbobot untuk semua atribut pada setiap alternatif, 
+                                        sehingga SAW memerlukan normalisasi matriks keputusan ke suatu skala yang dapat dibandingkan 
+                                        dengan semua rating alternatif yang ada.
                                         </p>
                                         <hr>
                                         <p class="card-text">

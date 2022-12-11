@@ -1,10 +1,10 @@
 <?php
 require "include/conn.php";
-$id = $_POST['id_criteria'];
-$criteria = $_POST['criteria'];
-$weight = $_POST['weight'];
+$id = $_POST['kdkriteria'];
+$criteria = $_POST['kriteria'];
 $attribute = $_POST['attribute'];
+$weight = $_POST['bobot'];
 
-$sql = "UPDATE saw_criterias SET criteria='$criteria',weight='$weight',attribute='$attribute' WHERE id_criteria='$id'";
+$sql = "UPDATE criteria SET kriteria='$criteria',bobot='$weight',atribut='$attribute' WHERE kdKriteria='$id'";
 $result = $db->query($sql);
 header("location:./bobot.php");

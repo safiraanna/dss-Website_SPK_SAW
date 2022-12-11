@@ -28,15 +28,11 @@ require "include/conn.php";
                 <div class="card-content">
                   <div class="card-body">
                     <p class="card-text">Melakukan perhitungan normalisasi untuk mendapatkan matriks nilai ternormalisasi (R), dengan ketentuan :
-Untuk normalisai nilai, jika faktor/attribute kriteria bertipe cost maka digunakan rumusan:
+Untuk normalisasi nilai, jika faktor/attribute kriteria bertipe cost maka digunakan rumusan:
 Rij = ( min{Xij} / Xij)
 sedangkan jika faktor/attribute kriteria bertipe benefit maka digunakan rumusan:
 Rij = ( Xij/max{Xij} )</p>
                   </div>
-                  <button type="button" class="btn btn-outline-success btn-sm m-2" data-bs-toggle="modal"
-                                        data-bs-target="#inlineForm">
-                                        Isi Nilai Alternatif
-                                    </button>
                   <div class="table-responsive">
                   <table class="table table-striped mb-0">
     <caption>

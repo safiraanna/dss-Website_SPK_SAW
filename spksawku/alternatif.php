@@ -28,14 +28,11 @@ require "include/conn.php";
                                 <div class="card-content">
                                     <div class="card-body">
                                         <p class="card-text">
-                                            Data-data mengenai kandidat kecamatan yang akan dievaluasi di representasikan dalam
-                                            tabel berikut:
+                                            Alternatif yang digunakan dalam sistem pendukung keputusan kali ini adalah kecamatan-kecamatan yang ada pada
+                                            Kabupaten Sumerang. Data ini kami peroleh dari website <a href="https://opendata.sumedangkab.go.id/index.php/dashboard/dataseet">Open Data Kabupaten Sumedang </a>
+                                            Data-data mengenai kandidat kecamatan yang akan dievaluasi di representasikan dalam tabel berikut:
                                         </p>
                                     </div>
-                                    <button type="button" class="btn btn-outline-success btn-sm m-2" data-bs-toggle="modal"
-                                        data-bs-target="#inlineForm">
-                                        Tambah Alternatif
-                                    </button>
                                     <hr>
                                     <div class="table-responsive">
                                         <table class="table table-striped mb-0">
@@ -54,21 +51,6 @@ while ($row = $result->fetch_object()) {
     echo "<tr>
         <td class='right'>" . (++$i) . "</td>
         <td class='center'>{$row->namaKecamatan}</td>
-        <td>
-        <div class='btn-group mb-1'>
-        <div class='dropdown'>
-            <button class='btn btn-primary dropdown-toggle me-1 btn-sm' type='button'
-                id='dropdownMenuButton' data-bs-toggle='dropdown'
-                aria-haspopup='true' aria-expanded='false'>
-                Aksi
-            </button>
-            <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                <a class='dropdown-item' href='alternatif-edit.php?id={$row->kdKecamatan}'>Edit</a>
-                <a class='dropdown-item' href='alternatif-hapus.php?id={$row->kdKecamatan}'>Hapus</a>
-            </div>
-        </div>
-    </div>
-        </td>
       </tr>\n";
 }
 $result->free();
@@ -81,38 +63,6 @@ $result->free();
                     </section>
                 </div>
                 <?php require "layout/footer.php";?>
-            </div>
-        </div>
-        <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel33">Login Form </h4>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <i data-feather="x"></i>
-                        </button>
-                    </div>
-                    <form action="alternatif-simpan.php" method="POST">
-                        <div class="modal-body">
-                            <label>Name: </label>
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Nama Kandidat..." class="form-control"
-                                    required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                <i class="bx bx-x d-block d-sm-none"></i>
-                                <span class="d-none d-sm-block">Close</span>
-                            </button>
-                            <button type="submit" name="submit" class="btn btn-primary ml-1">
-                                <i class="bx bx-check d-block d-sm-none"></i>
-                                <span class="d-none d-sm-block">Simpan</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
         <?php require "layout/js.php";?>

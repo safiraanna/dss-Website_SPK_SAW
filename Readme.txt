@@ -1,3 +1,5 @@
+Credit for the author of bootstrap template:
+
 Thanks for downloading this template!
 
 Template Name: Arsha
