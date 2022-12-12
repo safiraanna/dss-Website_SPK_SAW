@@ -53,7 +53,7 @@
 
                 <li class="sidebar-item">
                     <a href="beasiswa.php" class='sidebar-link'>
-                        <i class="bi bi-mortarboard-fill"></i>
+                        <i class="bi bi-briefcase-fill"></i>
                         <span>Beasiswa</span>
                     </a>
                 </li>

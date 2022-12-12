@@ -34,9 +34,6 @@ require "include/conn.php";
                                     <hr>
                                     <div class="table-responsive">
                                         <table class="table table-striped mb-0">
-                                            <caption>
-                                                Daftar Beasiswa Dalam Negeri<sub>i</sub>
-                                            </caption>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Beasiswa</th>
