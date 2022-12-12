@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 01:27 PM
+-- Generation Time: Dec 12, 2022 at 03:25 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.25
 
@@ -178,6 +178,28 @@ INSERT INTO `evaluations` (`kdKecamatan`, `kdKriteria`, `nilai`) VALUES
 (26, 2, 1903),
 (26, 3, 15);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `scholarship`
+--
+
+CREATE TABLE `scholarship` (
+  `kdBeasiswa` int(11) NOT NULL,
+  `judulBeasiswa` varchar(150) NOT NULL,
+  `durasi` varchar(50) NOT NULL,
+  `penyedia` varchar(50) NOT NULL,
+  `akses` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `scholarship`
+--
+
+INSERT INTO `scholarship` (`kdBeasiswa`, `judulBeasiswa`, `durasi`, `penyedia`, `akses`) VALUES
+(1, 'Beasiswa Merdeka Pendidikan', 'Agustus - Desember 2022', 'Kitabisa', 'https://ktbs.in/daftarsekarang'),
+(2, 'Beasiswa Lazada Forward', '7 Januari 2022', 'Lazada', 'http://kalibrr.me/LazadaForwardScholarship');
+
 --
 -- Indexes for dumped tables
 --
@@ -202,6 +224,12 @@ ALTER TABLE `evaluations`
   ADD KEY `kdKriteria` (`kdKriteria`);
 
 --
+-- Indexes for table `scholarship`
+--
+ALTER TABLE `scholarship`
+  ADD PRIMARY KEY (`kdBeasiswa`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -210,6 +238,12 @@ ALTER TABLE `evaluations`
 --
 ALTER TABLE `criteria`
   MODIFY `kdKriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `scholarship`
+--
+ALTER TABLE `scholarship`
+  MODIFY `kdBeasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

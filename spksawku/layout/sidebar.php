@@ -52,6 +52,13 @@
                 </li>
 
                 <li class="sidebar-item">
+                    <a href="beasiswa.php" class='sidebar-link'>
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <span>Beasiswa</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
                     <a href="../index.html" class='sidebar-link'>
                         <i class="bi bi-box-arrow-right"></i>
                         <span>Back to Home Page</span>
