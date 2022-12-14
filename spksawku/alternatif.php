@@ -51,7 +51,7 @@ while ($row = $result->fetch_object()) {
     echo "<tr>
         <td class='right'>" . (++$i) . "</td>
         <td class='center'>{$row->namaKecamatan}</td>
-      </tr>\n";
+        </tr>\n";
 }
 $result->free();
 ?>
