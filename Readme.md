@@ -22,8 +22,9 @@ Metode Simple Additive Weighting (SAW) sering juga dikenal istilah metode penjum
 4. Buka web browser (jenis apapun), ketik "localhost\dss-Website_SPK_SAW
 5. Halaman web akan terbuka
 
-Credits :
-* Template Name: Arsha - v4.9.0
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+
+Special thanks and credits (css bootstrap template) :
+Template Name: Arsha - v4.9.0
+Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
