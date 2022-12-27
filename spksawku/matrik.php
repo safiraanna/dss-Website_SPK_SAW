@@ -2,7 +2,6 @@
 <html lang="en">
 <?php
 //koneksi dengan database
-
 require "layout/head.php";
 require "include/conn.php";
 ?>
@@ -50,8 +49,7 @@ Rij = ( Xij/max{Xij} )</p>
         <th colspan="2">C3</th>
     </tr>
 <?php
-//menampilkan hitungan jumlah nilai yang ada pada masing2 kriteria
-
+//menampilkan PK kecamatan, nama kecamatan, dan nilai yang ada pada masing2 kriteria
 $sql = "SELECT
           a.kdKecamatan,
           b.namaKecamatan,
@@ -63,6 +61,7 @@ $sql = "SELECT
           JOIN districts b USING(kdKecamatan)
         GROUP BY a.kdKecamatan
         ORDER BY a.kdKecamatan";
+
 $result = $db->query($sql);
 $X = array(1 => array(), 2 => array(), 3 => array());
 while ($row = $result->fetch_object()) {
@@ -80,7 +79,6 @@ while ($row = $result->fetch_object()) {
           </tr>\n";
 }
 $result->free();
-
 ?>
 </table>
 
@@ -97,7 +95,11 @@ $result->free();
         <th>C2</th>
         <th>C3</th>
     </tr>
-    <?php
+
+<?php
+//menampilkan kecamatan sebagai A(PK kecamatan) dan nilai matriks ternormalisasi berdasarkan atribut
+//nilai kriteria ternormalisasi dilabelkan dengan C1, C2, C3 dimana jika atribut bernilai 'benefit' jumlah nilai/nilai maksimum
+//sedangkan jika bukan, maka nilai min/jumlah nilai
 $sql = "SELECT
           a.kdKecamatan,
           SUM(
@@ -133,6 +135,8 @@ $sql = "SELECT
         GROUP BY a.kdKecamatan
         ORDER BY a.kdKecamatan
       ";
+
+//men
 $result = $db->query($sql);
 $R = array();
 while ($row = $result->fetch_object()) {

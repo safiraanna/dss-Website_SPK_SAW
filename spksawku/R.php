@@ -1,5 +1,5 @@
 <?php
-//menjumlahkan nilai di kategori yang sama
+//mengambil data PK kecamatan, nama kecamatan, dan nilai per-kriteria masing2nya
 $sql = "SELECT 
   a.kdKecamatan,
   b.namaKecamatan,
@@ -23,7 +23,7 @@ while ($row = $result->fetch_object()) {
 $result->free();
 
 //fungsi dimana jika atribut bertipe 'benefit' maka menggunakan rumus jumlah nilai/max
-//jika 'cost' menggunakan min/jumlah nilai
+//sedangkan jika bukan, menggunakan rumus min/jumlah nilai
 $sql = "SELECT
           a.kdKecamatan,
           SUM(

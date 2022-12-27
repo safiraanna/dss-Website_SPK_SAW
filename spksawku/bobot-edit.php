@@ -1,7 +1,8 @@
 <?php
 //koneksi dengan database
-
 require "include/conn.php";
+
+//mengambil semua data pada tabel kriteria dimana PK kriteria = id
 $id = $_GET['id'];
 $sql = "SELECT * FROM criteria WHERE kdKriteria = '$id' ";
 $result = $db->query($sql);

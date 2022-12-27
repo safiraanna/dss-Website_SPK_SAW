@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
+<?php
+//koneksi dengan database
 require "layout/head.php";
 require "include/conn.php";
-
-//koneksi dengan database
 ?>
 
   <body>

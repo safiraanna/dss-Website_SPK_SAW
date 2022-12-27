@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
+<?php
 require "layout/head.php";
+
+//koneksi ke database
 require "include/conn.php"; 
+
 require "W.php";
 require "R.php";
 ?>
@@ -34,16 +37,13 @@ require "R.php";
                   </div>
                   <div class="table-responsive">
                     <table class="table table-striped mb-0">
-                    <caption>
-    Nilai Preferensi (P)
-  </caption>
+                    <caption> Nilai Preferensi (P) </caption>
   <tr>
     <th>No</th>
     <th>Alternatif</th>
     <th>Hasil</th>
   </tr>
-  <?php
-
+<?php
 $P = array();
 $m = count($W);
 $no = 0;
@@ -58,9 +58,8 @@ $result = $db->query($sql);
             <td>" . (++$no) . "</td>
             <td>A{$i}</td>
             <td>{$P[$i]}</td>
-          </tr>";          
+          </tr>";         
 }
-
 ?>
                     </table>
                   </div>
@@ -79,5 +78,4 @@ $result = $db->query($sql);
     </div>
     <?php require "layout/js.php";?>
   </body>
-
 </html>
