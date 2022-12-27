@@ -1,4 +1,4 @@
-# Sistem Pendukung Keputusan Manajer IT Terbaik dengan metode SAW (Simple Additive Weighting) menggunakan PHP dan MySQL
+# Sistem Pendukung Penentuan Kecamatan yang Paling Membutuhkan Bantuan Beasiswa dengan metode SAW (Simple Additive Weighting) menggunakan PHP dan MySQL
 Metode Simple Additive Weighting (SAW) sering juga dikenal istilah metode penjumlahan terbobot. Konsep dasar metode SAW adalah mencari penjumlahan terbobot dari rating kinerja pada setiap alternatif pada semua atribut (Fishburn 1967). SAW dapat dianggap sebagai cara yang paling mudah dan intuitif untuk menangani masalah Multiple Criteria Decision-Making MCDM, karena fungsi linear additive dapat mewakili preferensi pembuat keputusan (Decision-Making, DM). Hal tersebut dapat dibenarkan, namun, hanya ketika asumsi preference independence (Keeney & Raiffa 1976) atau preference separability (Gorman 1968) terpenuhi.
 
 Langkah Penyelesaian Simple Additive Weighting (SAW) adalah sebagai berikut :

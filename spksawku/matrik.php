@@ -116,8 +116,8 @@ $sql = "SELECT
                 b.atribut='benefit',
                 a.nilai/" . max($X[2]) . ",
                 " . min($X[2]) . "/a.nilai)
-               ,0)
-             ) AS C2,
+              ,0)
+            ) AS C2,
           SUM(
             IF(
               a.kdKriteria=3,
@@ -125,14 +125,14 @@ $sql = "SELECT
                 b.atribut='benefit',
                 a.nilai/" . max($X[3]) . ",
                 " . min($X[3]) . "/a.nilai)
-               ,0)
-             ) AS C3
+              ,0)
+            ) AS C3
         FROM
           evaluations a
           JOIN criteria b USING(kdKriteria)
         GROUP BY a.kdKecamatan
         ORDER BY a.kdKecamatan
-       ";
+      ";
 $result = $db->query($sql);
 $R = array();
 while ($row = $result->fetch_object()) {
