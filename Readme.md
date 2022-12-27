@@ -15,6 +15,13 @@ Metode Simple Additive Weighting (SAW) sering juga dikenal istilah metode penjum
 3. Membuat matriks keputusan berdasarkan kriteria(Ci), kemudian melakukan normalisasi matriks berdasarkan persamaan yang disesuaikan dengan jenis atribut (atribut keuntungan ataupun atribut biaya) sehingga diperoleh matriks ternormalisasi R.
 4. Hasil akhir diperoleh dari proses perankingan yaitu penjumlahan dari perkalian matriks ternormalisasi R dengan vektor bobot sehingga diperoleh nilai terbesar yang dipilih sebagai alternatif terbaik (Ai)sebagai solusi
 
+## Langkah Mengakses Web : ##
+1. Unduh dan install aplikasi XAMPP
+2. Clone repository github ke text editor, masukkan ke dalam folder C:\xampp\htdocs
+3. Buka XAMPP control panel, nyalakan Apache dan MySQL
+4. Buka web browser (jenis apapun), ketik "localhost\dss-Website_SPK_SAW
+5. Halaman web akan terbuka
+
 Credits :
 * Template Name: Arsha - v4.9.0
 * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
