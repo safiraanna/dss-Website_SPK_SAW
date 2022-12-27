@@ -1,10 +1,13 @@
 <?php
+//koneksi dengan database
+
 require "include/conn.php";
 $id = $_GET['id'];
 $sql = "SELECT * FROM criteria WHERE kdKriteria = '$id' ";
 $result = $db->query($sql);
 $row = $result->fetch_array();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <?php require "layout/head.php";?>
@@ -63,5 +66,4 @@ $row = $result->fetch_array();
         </div>
         <?php require "layout/js.php";?>
     </body>
-
 </html>

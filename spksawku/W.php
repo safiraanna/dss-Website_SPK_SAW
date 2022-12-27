@@ -6,4 +6,6 @@ $W = array();
 while ($row = $result->fetch_object()) {
     $W[] = $row->bobot;
 }
+
+//query untuk menghimpun data bobot menjadi array
 ?>

@@ -3,6 +3,8 @@
   <?php
 require "layout/head.php";
 require "include/conn.php";
+
+//koneksi dengan database
 ?>
 
   <body>
@@ -42,7 +44,9 @@ require "include/conn.php";
     <th>Atribut</th>
     <th colspan="2">Bobot</th>
   </tr>
-  <?php
+<?php
+//query sql untuk menampilkan kriteria yang digunakan dalam perhitungan
+
 $sql = 'SELECT kdKriteria,kriteria,atribut,bobot FROM criteria';
 $result = $db->query($sql);
 $i = 0;

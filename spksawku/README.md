@@ -9,8 +9,8 @@ Langkah Penyelesaian Simple Additive Weighting (SAW) adalah sebagai berikut :
 4. Hasil akhir diperoleh dari proses perankingan yaitu penjumlahan dari perkalian matriks ternormalisasi R dengan vektor bobot sehingga diperoleh nilai terbesar yang dipilih sebagai alternatif terbaik (Ai)sebagai solusi
 
 
-
-
-
-
-
+Credits :
+  * Template Name: Arsha - v4.9.0
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/

@@ -1,8 +1,9 @@
 <?php
+//menjumlahkan nilai di kategori yang sama
 $sql = "SELECT 
   a.kdKecamatan,
   b.namaKecamatan,
-    SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1,
+    SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1,    
     SUM(IF(a.kdKriteria=2,a.nilai,0)) AS C2,
     SUM(IF(a.kdKriteria=3,a.nilai,0)) AS C3
   FROM
@@ -11,6 +12,7 @@ $sql = "SELECT
   GROUP BY a.kdKecamatan
   ORDER BY a.kdKecamatan";
 
+//memasukkan nilai kedalam array
 $result = $db->query($sql);
 $X = array(1 => array(), 2 => array(), 3 => array());
 while ($row = $result->fetch_object()) {
@@ -20,14 +22,16 @@ while ($row = $result->fetch_object()) {
 }
 $result->free();
 
+//fungsi dimana jika atribut bertipe 'benefit' maka menggunakan rumus jumlah nilai/max
+//jika 'cost' menggunakan min/jumlah nilai
 $sql = "SELECT
           a.kdKecamatan,
           SUM(
             IF(
               a.kdKriteria=1,
               IF(
-                b.atribut='benefit',
-                a.nilai/" . max($X[1]) . ",
+                b.atribut='benefit',           
+                a.nilai/" . max($X[1]) . ",     
                 " . min($X[1]) . "/a.nilai)
               ,0)
               ) AS C1,

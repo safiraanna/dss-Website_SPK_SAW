@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
 <html lang="en">
-    <?php
+<?php
+//koneksi dengan database
+
 require "layout/head.php";
 require "include/conn.php";
 ?>
@@ -41,7 +43,9 @@ require "include/conn.php";
                                                 <th>Penyedia</th>
                                                 <th>Link</th>
                                             </tr>
-                                            <?php
+<?php
+//query untuk menampilkan beasiswa dari database
+
 $sql = 'SELECT kdBeasiswa, judulBeasiswa, durasi, penyedia, akses FROM scholarship';
 $result = $db->query($sql);
 $i = 0;

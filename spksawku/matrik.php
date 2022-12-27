@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php
+<?php
+//koneksi dengan database
+
 require "layout/head.php";
 require "include/conn.php";
 ?>
@@ -47,11 +49,13 @@ Rij = ( Xij/max{Xij} )</p>
         <th>C2</th>
         <th colspan="2">C3</th>
     </tr>
-    <?php
+<?php
+//menampilkan hitungan jumlah nilai yang ada pada masing2 kriteria
+
 $sql = "SELECT
           a.kdKecamatan,
           b.namaKecamatan,
-          SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1,
+          SUM(IF(a.kdKriteria=1,a.nilai,0)) AS C1, 
           SUM(IF(a.kdKriteria=2,a.nilai,0)) AS C2,
           SUM(IF(a.kdKriteria=3,a.nilai,0)) AS C3
         FROM

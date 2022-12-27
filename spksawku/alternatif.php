@@ -3,8 +3,9 @@
     <?php
 require "layout/head.php";
 require "include/conn.php";
-?>
 
+//koneksi database, 
+?>
     <body>
         <div id="app">
             <?php require "layout/sidebar.php";?>
@@ -43,7 +44,9 @@ require "include/conn.php";
                                                 <th>No</th>
                                                 <th colspan="2">Name</th>
                                             </tr>
-                                            <?php
+<?php
+//query sql untuk menampilkan data kecamatan dari database
+
 $sql = 'SELECT kdKecamatan, namaKecamatan FROM districts';
 $result = $db->query($sql);
 $i = 0;

@@ -47,6 +47,8 @@ require "R.php";
 $P = array();
 $m = count($W);
 $no = 0;
+
+//rumus nilai preferensi r (nilai ternormalisasi) * W (bobot)
 $result = $db->query($sql);
     foreach ($R as $i => $r) {
       for ($j = 0; $j < $m; $j++) {
@@ -59,13 +61,11 @@ $result = $db->query($sql);
           </tr>";          
 }
 
-
 ?>
                     </table>
                   </div>
                     <div>
                       <?php
-
                       echo "Nilai yang tertinggi adalah " . (max($P));
                       ?>
                     </div>
